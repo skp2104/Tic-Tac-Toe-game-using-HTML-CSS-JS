@@ -1,0 +1,129 @@
+/* Importing Google FOnts to use "font-family: 'Roboto', sans-serif;" in this file */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2&display=swap');
+
+
+/* giving margin and padding = 0 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* customization na bar */
+nav{
+    background-color: rgb(106, 27, 110);
+    color: white;
+    height: 50px;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: 'Roboto', sans-serif; /*using Google Fonts*/
+}
+
+/* to remove the bullet occuring due to 'li' tag*/
+nav ul{
+    list-style: none;
+}
+
+/* writing css for gameContainer */
+.gameContainer{
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+/* writing css for container */
+.container{
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: 'Roboto', sans-serif; 
+    position: relative;
+}
+
+/* writing css for div inside the 'box' class to give border and font to 'X' and '0' while playing */
+.box{
+    border: 2px solid black;
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex; /*so that it acquires the whole box*/
+    justify-content: center; /*to place the content at center*/
+    align-items: center;
+    background-color: rgb(202, 238, 143);
+}
+
+/*apply mouse hover */
+.box:hover{
+    background-color: rgb(188, 234, 248);
+}
+
+/*giving padding to the second container*/
+.gameInfo{
+    padding: 0 34px;
+    font-family: 'Baloo Bhaina 2', cursive;
+}
+
+
+.imgbox img{
+     width: 0; /* making width=0 to hide the image*/
+     transition: width 1s ease-in-out; /*giving transition to width after 1sec to img*/
+}
+
+/*writing utility classes to remove the border from top-right-bottom-left in the Game */
+.br-0{
+    border-right: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
+
+/*giving style to the button- "Reset" */
+#reset{
+    margin: 0 23px;
+    padding: 6px 14px;
+    background-color: rgb(243, 246, 162);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Baloo Bhaina 2', cursive;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.info{
+    font-size: 25px;
+}
+
+/* making a line to cross the signs in the Game if someone wins*/
+.line{
+    background-color: black;
+    height: 3px;
+    width: 20vw;
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+}
+
+/*applying media query at 800px to make it responsive for mobile*/
+@media screen and (max-width: 800px)
+{
+    .gameContainer{
+        flex-wrap: wrap; /*i.e.wrapping the content below when width is decreased like in mobile using flex-wrap*/
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .gameInfo h1{
+        font-size: 1.5rem;
+    }
+    .container{
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
